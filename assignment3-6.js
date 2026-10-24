@@ -46,21 +46,19 @@ console.log("Status: " + status);
 // Assignment 4: Loops
 
 // 1. Use a for loop to print the multiplication table of 5
-console.log("\nMultiplication Table of 5:");
+console.log("-- Multiplication Table of 5 --");
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 5; i++) {
     console.log("5 x " + i + " = " + (5 * i));
 }
 
-// 2. Use while loop and break to find the first number greater than 10
-// that is divisible by 6
-console.log("\nFirst number greater than 10 divisible by 6:");
+console.log("-- First number > 10 divisible by 6 --");
 
 let number = 11;
 
 while (number <= 100) {
     if (number > 10 && number % 6 === 0) {
-        console.log(number);
+        console.log("Found: " + number);
         break;
     }
     number++;
@@ -92,8 +90,10 @@ function calculateRectangleArea(length = 5, width = 4) {
 }
 
 console.log(
-    "Standard Function Area: " + calculateRectangleArea()
+    "Standard Function Area (Default 5x4): " + calculateRectangleArea()
 );
+
+
 
 // 2. Arrow function with custom parameters
 const calculateArea = (length, width) => {
@@ -101,7 +101,7 @@ const calculateArea = (length, width) => {
 };
 
 console.log(
-    "Arrow Function Area: " + calculateArea(10, 3)
+    "Arrow Function Area (Custom 10x3): " + calculateArea(10, 3)
 );
 
 // 3. Demonstrate block scope
@@ -128,8 +128,6 @@ const products = [
     { name: "Laptop", price: 800 },
     { name: "Mouse", price: 25 },
     { name: "Keyboard", price: 45 },
-    { name: "Monitor", price: 150 },
-    { name: "Headphones", price: 60 }
 ];
 
 // 2. Use forEach() to display all products
