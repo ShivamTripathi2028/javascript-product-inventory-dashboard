@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Product Inventory and Analytics Dashboard built with JavaScript.">
+    <title>Product Inventory Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">INVENTORY MANAGEMENT</p>
+            <h1>Product Dashboard</h1>
+            <p class="subtitle">Manage products and track your inventory analytics.</p>
+        </div>
+        <span class="status-badge">● System Active</span>
+    </header>
+
+    <main class="container">
+        <section class="stats-grid">
+            <article class="stat-card">
+                <p>Total Products</p>
+                <h2 id="totalProducts">3</h2>
+                <span>Products in inventory</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Total Inventory Value</p>
+                <h2 id="totalValue">$975.00</h2>
+                <span>Combined product value</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Affordable Products</p>
+                <h2 id="affordableCount">2</h2>
+                <span>Priced under $200</span>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Add New Product</h2>
+                    <p>Add a product to update your inventory instantly.</p>
+                </div>
+            </div>
+
+            <form id="productForm" class="product-form">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="e.g. Monitor"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Price ($)</label>
+                    <input
+                        type="number"
+                        id="productPrice"
+                        placeholder="e.g. 150"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <button type="submit">+ Add Product</button>
+            </form>
+
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Product Inventory</h2>
+                    <p>Review all products and their categories.</p>
+                </div>
+                <span id="inventoryCount" class="count-badge">3 items</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Affordable Products</h2>
+                    <p>Products priced below $200.</p>
+                </div>
+            </div>
+            <div id="affordableProducts" class="affordable-list"></div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Financial Analytics</h2>
+                    <p>Illustrative tax and discount calculations.</p>
+                </div>
+            </div>
+
+            <div class="finance-grid">
+                <div class="finance-item">
+                    <span>Estimated Tax (10%)</span>
+                    <strong id="taxValue">$97.50</strong>
+                </div>
+                <div class="finance-item">
+                    <span>Illustrative Discount (5%)</span>
+                    <strong id="discountValue">$48.75</strong>
+                </div>
+                <div class="finance-item">
+                    <span>Value After Discount</span>
+                    <strong id="discountedValue">$926.25</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Formatted Product Report</h2>
+                    <p>Generated using JavaScript array methods.</p>
+                </div>
+            </div>
+            <ul id="productReport" class="report-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Product Inventory & Analytics Dashboard</p>
+        <p>Built with HTML, CSS and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
